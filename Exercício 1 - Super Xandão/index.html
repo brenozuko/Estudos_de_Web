@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Xandão - O Ultimo Herói da Terra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <h1 class="title-page">Super Xandão</h1>
+    <div class="container">
+        <iframe class="video" width="727" height="409" src="https://www.youtube.com/embed/Kg64rI1UX4E" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+
+        <h2 id="description" class="first-description">Super Xandão é a luz, a verdade e a vida. E ninguém chega ao fim
+            dos tempos, senão com
+            ele.</h2>
+
+    </div>
+    <div class="container">
+        <button class="button" onclick="blink()">Muda a Cor</button>
+    </div>
+</body>
+
+
+<style>
+    body {
+        font-family: 'Press Start 2P', cursive;
+        background-color: black;
+    }
+
+    .title-page {
+        color: white;
+        text-align: center;
+    }
+
+    .first-description {
+        color: white;
+        font-size: 20px;
+        padding: 50px;
+        max-width: 30%;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .button {
+        margin-top: 30px;
+        background-color: transparent;
+        color: white;
+        border: 2px solid;
+        border-color: white;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 18px;
+    }
+
+    .button:hover {
+        transform: scale(0.95);
+        background-color: blue;
+        border-color: blue;
+        transition: linear 100ms;
+    }
+
+</style>
+
+<script>
+
+    function blink() {
+        setInterval(function () { document.getElementById('description').style.color = 'red'; }, 1000)
+        setInterval(function () { document.getElementById('description').style.color = 'blue'; }, 2000) }
+    
+</script>
+
+</html>
