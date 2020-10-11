@@ -16,13 +16,17 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
 
+        <div style="width: 30%">    
         <h2 id="description" class="first-description">Super Xandão é a luz, a verdade e a vida. E ninguém chega ao fim
             dos tempos, senão com
             ele.</h2>
 
+
+        <h2 id="second-description" class="first-description" style="display:none">ALL HAIL XANDÃO.</h2>
+    </div>
     </div>
     <div class="container">
-        <button class="button" onclick="blink()">Muda a Cor</button>
+        <button class="button" onclick="callToggle()">AQUI É XANDÃO</button>
     </div>
 </body>
 
@@ -42,12 +46,20 @@
         color: white;
         font-size: 20px;
         padding: 50px;
-        max-width: 30%;
+        transition: 200ms linear;
     }
 
     .container {
         display: flex;
         justify-content: center;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
     }
 
     .button {
@@ -62,20 +74,30 @@
     }
 
     .button:hover {
-        transform: scale(0.95);
         background-color: blue;
-        border-color: blue;
         transition: linear 100ms;
     }
-
 </style>
 
 <script>
+    var toggle = true;
+    function changeToggle() {
+        if (toggle == true) {
+            document.getElementById("description").style.display = "block"
+            document.getElementById("second-description").style.display = "none"
+            toggle = !toggle;
+        } else {
+            document.getElementById("description").style.display = "none"
+            document.getElementById("second-description").style.display = "block"
+            toggle = !toggle;
+        }
+    }
 
-    function blink() {
-        setInterval(function () { document.getElementById('description').style.color = 'red'; }, 1000)
-        setInterval(function () { document.getElementById('description').style.color = 'blue'; }, 2000) }
-    
+    function callToggle() {
+        setInterval(function() {
+            changeToggle()
+        }, 500)
+    }
 </script>
 
 </html>
